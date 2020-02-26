@@ -78,10 +78,131 @@ ul, a, li {
   margin: 0 auto;
 }
 
+.radio {
+  margin: 16px 0;
+  display: block;
+  cursor: pointer;
+  input {
+      display: none;
+      & + span {
+          line-height: $radioSize;
+          height: $radioSize;
+          padding-left: $radioSize;
+          display: block;
+          position: relative;
+          &:not(:empty) {
+              padding-left: $radioSize + 8;
+          }
+          &:before,
+          &:after {
+              content: '';
+              width: $radioSize;
+              height: $radioSize;
+              display: block;
+              border-radius: 50%;
+              left: 0;
+              top: 0;
+              position: absolute;
+          }
+          &:before {
+              background: $radioBorder;
+              transition: background-color .2s ease,
+                          transform .4s cubic-bezier(.175, .885, .32, 2);
+          }
+          &:after {
+              background: #fff;
+              transform: scale(.78);
+              transition: transform .6s cubic-bezier(.175, .885, .32, 1.4);
+          }
+      }
+      &:checked + span {
+          &:before {
+              transform: scale(1.04);
+              background: $radioActive;
+          }
+          &:after {
+              transform: scale(.4);
+              transition: transform .3s ease;
+          }
+      }
+  }
+  &:hover {
+      input {
+          & + span {
+              &:before {
+                  transform: scale(.92);
+              }
+              &:after {
+                  transform: scale(.74);
+              }
+          }
+          &:checked + span {
+              &:after {
+                  transform: scale(.4);
+              }
+          }
+      }
+  }
+}
+.row {
+  display: flex;
+  margin: auto;
+}
+.tooltip {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    overflow: visible;
+    .tooltip-content {
+      opacity: 1;
+    }
+  }
+  
+  .tooltip-content {
+    background: #fff;
+    box-shadow: 0 5px 25px 5px $shadow;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue Regular';
+    color: $black;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    max-width: 200px;
+    min-width: 145px;
+    padding: 1em;
+    position: absolute;
+    opacity: 0;
+    transition: all .3s ease;
+    &::after {
+      background: #fff;
+      content: "";
+      height: 10px;
+      position: absolute;
+      transform: rotate(45deg);
+      width: 10px;
+    }
+  }
+
+  &.right {
+    .tooltip-content {
+      left: calc(100% + 1.5em);
+      top: 50%;
+      transform: translateY(-50%);
+      &::after {
+        left: -5px;
+        margin-top: -5px;
+        top: 50%;
+      }
+    }
+  }      
+}
 
 .pass_nav {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-top: 45px;
   // border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
@@ -120,7 +241,7 @@ ul, a, li {
     display: flex;
     align-items: center;
     background-color: $darkBlue;
-    padding: 8px;
+    padding: 7px 10px 7px 7px;
     margin-bottom: 9px;
     border-radius: 8px;
     svg {
@@ -141,14 +262,18 @@ ul, a, li {
 
 
 .main_page {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
+  align-items: flex-start;
+  // justify-content: space-between;
+  margin-top: 48px;
+
+
 
   .iphone {
     background-image: url(../img/iphone.png);
-    background-size: contain;
-    width: 320px;
+    background-size: cover;
+    min-width: 320px;
     height: 648px;
     .iphone_container {
       position: relative;
@@ -289,4 +414,132 @@ ul, a, li {
       }
     }
   }
+
+
+  .pass_settings {
+    position: relative;
+    max-width: 780px;
+    width: 780px;
+    margin-top: 16px;
+    margin-left: 81px;
+    h3 {
+      display: flex;
+      max-width: 100%;
+      font-family: 'Helvetica Neue Bold';
+      color: $black;
+      font-size: 21px;
+    }
+    hr {
+      height: 1px;
+      border: 0;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    .cards {
+      margin-top: 33px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      .card {
+        &:hover {
+          .card_info {
+            color: $darkBlue;
+            font-family: 'Helvetica Neue Bold';
+          }
+          .card_form {
+            border-color: $darkBlue;
+            div {
+              background-color: $darkBlue;
+            }
+          }
+        }
+
+        .card_info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-family: 'Helvetica Neue Regular';
+          margin-bottom: 18px;
+          font-size: 18px;
+          color: $black;
+          transition: 0.3s color,
+                      0.3s font-family;
+        }
+        .card_form {
+          width: 138px;
+          height: 177px;
+          background-color: #E6F0F7;
+          border: 1px solid $lightBlue;
+          transition: 0.3s border-color;
+          div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Helvetica Neue Condensed Black';
+            font-size: 32px;
+            color: #fff;
+            background-color: $lightBlue;
+            padding: 10px;
+            height: 38px;
+            width: 38px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 30px 0px rgba(92,107,116,0.2);
+            transform: translate(41px, 72px);
+            transition: background-color 0.3s;
+          }
+          .num {
+            font-size: 22px;
+          }
+          .smile {
+            transform: translate(2px, 1px) rotate(90deg);
+          }
+        }
+      }
+    }
+    hr {
+      margin-top: 24px;
+      margin-bottom: 32px;
+    }
+
+
+
+    .pass_form {
+      position: relative;
+      z-index: 5;
+      width: 370px;
+      .p_header {
+        position: relative;
+        z-index: 4;
+        font-family: 'Helvetica Neue Bold';
+        font-size: 14px;
+        color: $black;
+        .red_star {
+          color: $red;
+          font-size: 14px;
+        }
+        svg {
+          transform: translateY(3px);
+          margin-left: 5px;
+        }
+      }
+      hr {
+        margin-top: 24px;
+        margin-bottom: 24px;
+      }
+      .form_input {
+        margin-top: 8px;
+        margin-bottom: 24px;
+        width: 100%;
+        height: 20px;
+        padding: 5px 18px 5px 8px;
+        font-family: 'Helvetica Neue Regular';
+        font-size: 14px;
+        color: $grey;
+        border: 1px solid #DEDFDF;
+        border-radius: 4px;
+
+      }
+    }
+  }
+
 }
