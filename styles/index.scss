@@ -1,0 +1,292 @@
+@import './variables.scss';
+
+@font-face {
+  font-family: 'Helvetica Neue Medium';
+  src: url(fonts/HelveticaNeueMedium.ttf);
+  font-size: 14px; 
+  color: $black;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Bold';
+  src: url(fonts/HelveticaNeueBold.ttf);
+  font-size: 14px; 
+  color: $black;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Condensed Black';
+  src: url(fonts/HelveticaNeueCondensedBlack.ttf);
+  font-size: 16px; 
+  color: $black;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Regular';
+  src: url(fonts/HelveticaNeueRegular.ttf);
+  font-size: 14px; 
+  color: $black;
+}
+
+@font-face {
+  font-family: 'SF Pro Text Semibold';
+  src: url(fonts/SFProTextSemibold.ttf);
+  font-size: 12px; 
+  color: white;
+}
+
+@font-face {
+  font-family: 'SF Pro Display Semibold';
+  src: url(fonts/SFProDisplaySemibold.ttf);
+  font-size: 12px; 
+  color: black;
+}
+
+@font-face {
+  font-family: 'SF Pro Display Bold';
+  src: url(fonts/SFProDisplayBold.ttf);
+  font-size: 8px; 
+  color: white;
+}
+
+@font-face {
+  font-family: 'SF Pro Display Regular';
+  src: url(fonts/SFProDisplayRegular.ttf);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul, a, li {
+  text-decoration: none;
+  list-style: none;
+  color: $lightBlue;
+  border: none;   
+}
+
+
+.hr_border {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+
+.pass_nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 45px;
+  // border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  .pass_nav_item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    padding-bottom: 17px;
+    border-bottom: 4px solid #fff;
+    transition: 0.3s border-color;
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 5px;
+      path {
+        transition: 0.3s fill;
+      }
+    }
+    p {
+      font-family: 'Helvetica Neue Medium';
+      font-size: 16px;
+      color: $lightBlue;
+      transition: 0.3s color;
+    }
+    &:hover {
+      border-bottom: 4px solid $darkBlue;
+      path {
+        fill: $darkBlue;
+      }
+      p {
+        color: $darkBlue;
+      }
+    }
+  }
+  .save_pass {
+    display: flex;
+    align-items: center;
+    background-color: $darkBlue;
+    padding: 8px;
+    margin-bottom: 9px;
+    border-radius: 8px;
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 5px;
+      path {
+        fill: #fff;
+      }
+    }
+    p {
+      font-family: 'Helvetica Neue Medium';
+      font-size: 16px;
+      color: #fff;
+    }
+  }
+}
+
+
+.main_page {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+
+  .iphone {
+    background-image: url(../img/iphone.png);
+    background-size: contain;
+    width: 320px;
+    height: 648px;
+    .iphone_container {
+      position: relative;
+      width: 80%;
+      height: 592px;
+      margin: 0 auto;
+      .status_bars {
+        margin-top: 26px;
+        display: flex;
+        justify-content: space-between;
+        .iphone_time {
+          font-family: 'SF Pro Text Semibold';
+          font-size: 14px;
+          color: black;
+        }
+        .statuses {
+          display: flex;
+          align-items: center;
+          img {
+            margin-left: 4px;
+          }
+        }
+      }
+      .iphone_nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        p {
+          font-family: 'SF Pro Display Semibold';
+        }
+      }
+
+      .pass_content {
+        position: relative;
+        margin-top: 15px;
+        height: 375px;
+        background-color: #89949B;
+
+        box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.1);
+        &:before {
+          position: absolute;
+          content: '';
+          display: block;
+          width: 50px;
+          height: 38px;
+          border-radius: 50%;
+          background-color: white;
+          transform: translate(103px, -22px);
+          box-shadow: inset 0px -10px 25px 0px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pass_content_container {
+          margin: 0 auto;
+          width: 95%;
+
+          .pass_header {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 7px;
+  
+            .logo {
+              width: 109px;
+              height: 26px;
+              color: $darkBlue;
+              background-color: $lightBlue;
+            }
+            .exp_date {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: flex-end;
+
+              .exp_time {
+                font-family: 'SF Pro Display Semibold';
+                font-size: 8px;
+                color: #fff;
+              }
+              .exp_date {
+                font-family: 'SF Pro Display Regular';
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.7);
+              }
+            }
+          }
+          .mini_p {
+            font-family: 'SF Pro Display Semibold';
+            font-size: 9px;
+            color: #fff;
+          }
+          .pass_event_info {
+            margin-top: 15px;
+            .pass_event_name {
+              font-family: 'SF Pro Display Regular';
+              font-size: 15px;
+              color: rgba(255, 255, 255, 0.7);
+            }
+          }
+          .pass_place_info {
+            margin-top: 13px;
+            .pass_place {
+              font-family: 'SF Pro Display Regular';
+              font-size: 12px;
+              color: rgba(255, 255, 255, 0.7);
+            }
+          }
+          .pass_ticket_info {
+            margin-top: 13px;
+            .pass_ticket {
+              font-family: 'SF Pro Display Regular';
+              font-size: 10px;
+              color: rgba(255, 255, 255, 0.7);
+            }
+          }
+        }
+        .qr_code {
+          display: block;
+          position: absolute;
+          bottom: 10px;
+          left: 72px;
+          width: 112px;
+          height: 112px;
+          border-radius: 3px;
+        }
+      }
+      button {
+        position: absolute;
+        padding-bottom: 16px;
+        padding-top: 13px;
+        background-color: $darkBlue;
+        border-radius: 8px;
+        width: 100%;
+        border: none;
+        bottom: 0;
+        font-family: 'Helvetica Neue Bold';
+        font-size: 17px;
+        color: white;
+      }
+    }
+  }
+}

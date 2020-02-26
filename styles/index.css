@@ -1,0 +1,364 @@
+@font-face {
+  font-family: 'Helvetica Neue Medium';
+  src: url(fonts/HelveticaNeueMedium.ttf);
+  font-size: 14px;
+  color: #333333;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Bold';
+  src: url(fonts/HelveticaNeueBold.ttf);
+  font-size: 14px;
+  color: #333333;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Condensed Black';
+  src: url(fonts/HelveticaNeueCondensedBlack.ttf);
+  font-size: 16px;
+  color: #333333;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Regular';
+  src: url(fonts/HelveticaNeueRegular.ttf);
+  font-size: 14px;
+  color: #333333;
+}
+
+@font-face {
+  font-family: 'SF Pro Text Semibold';
+  src: url(fonts/SFProTextSemibold.ttf);
+  font-size: 12px;
+  color: white;
+}
+
+@font-face {
+  font-family: 'SF Pro Display Semibold';
+  src: url(fonts/SFProDisplaySemibold.ttf);
+  font-size: 12px;
+  color: black;
+}
+
+@font-face {
+  font-family: 'SF Pro Display Bold';
+  src: url(fonts/SFProDisplayBold.ttf);
+  font-size: 8px;
+  color: white;
+}
+
+@font-face {
+  font-family: 'SF Pro Display Regular';
+  src: url(fonts/SFProDisplayRegular.ttf);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul, a, li {
+  text-decoration: none;
+  list-style: none;
+  color: #8DA4B3;
+  border: none;
+}
+
+.hr_border {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.pass_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 45px;
+}
+
+.pass_nav .pass_nav_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px;
+  padding-bottom: 17px;
+  border-bottom: 4px solid #fff;
+  -webkit-transition: 0.3s border-color;
+  transition: 0.3s border-color;
+}
+
+.pass_nav .pass_nav_item svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.pass_nav .pass_nav_item svg path {
+  -webkit-transition: 0.3s fill;
+  transition: 0.3s fill;
+}
+
+.pass_nav .pass_nav_item p {
+  font-family: 'Helvetica Neue Medium';
+  font-size: 16px;
+  color: #8DA4B3;
+  -webkit-transition: 0.3s color;
+  transition: 0.3s color;
+}
+
+.pass_nav .pass_nav_item:hover {
+  border-bottom: 4px solid #124261;
+}
+
+.pass_nav .pass_nav_item:hover path {
+  fill: #124261;
+}
+
+.pass_nav .pass_nav_item:hover p {
+  color: #124261;
+}
+
+.pass_nav .save_pass {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #124261;
+  padding: 8px;
+  margin-bottom: 9px;
+  border-radius: 8px;
+}
+
+.pass_nav .save_pass svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.pass_nav .save_pass svg path {
+  fill: #fff;
+}
+
+.pass_nav .save_pass p {
+  font-family: 'Helvetica Neue Medium';
+  font-size: 16px;
+  color: #fff;
+}
+
+.main_page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 50px;
+}
+
+.main_page .iphone {
+  background-image: url(../img/iphone.png);
+  background-size: contain;
+  width: 320px;
+  height: 648px;
+}
+
+.main_page .iphone .iphone_container {
+  position: relative;
+  width: 80%;
+  height: 592px;
+  margin: 0 auto;
+}
+
+.main_page .iphone .iphone_container .status_bars {
+  margin-top: 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main_page .iphone .iphone_container .status_bars .iphone_time {
+  font-family: 'SF Pro Text Semibold';
+  font-size: 14px;
+  color: black;
+}
+
+.main_page .iphone .iphone_container .status_bars .statuses {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main_page .iphone .iphone_container .status_bars .statuses img {
+  margin-left: 4px;
+}
+
+.main_page .iphone .iphone_container .iphone_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+
+.main_page .iphone .iphone_container .iphone_nav p {
+  font-family: 'SF Pro Display Semibold';
+}
+
+.main_page .iphone .iphone_container .pass_content {
+  position: relative;
+  margin-top: 15px;
+  height: 375px;
+  background-color: #89949B;
+  -webkit-box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main_page .iphone .iphone_container .pass_content:before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 50px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: white;
+  -webkit-transform: translate(103px, -22px);
+          transform: translate(103px, -22px);
+  -webkit-box-shadow: inset 0px -10px 25px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0px -10px 25px 0px rgba(0, 0, 0, 0.1);
+}
+
+.main_page .iphone .iphone_container .pass_content .pass_content_container {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.main_page .iphone .iphone_container .pass_content .pass_content_container .pass_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 7px;
+}
+
+.main_page .iphone .iphone_container .pass_content .pass_content_container .pass_header .logo {
+  width: 109px;
+  height: 26px;
+  color: #124261;
+  background-color: #8DA4B3;
+}
+
+.main_page .iphone .iphone_container .pass_content .pass_content_container .pass_header .exp_date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.main_page .iphone .iphone_container .pass_content .pass_content_container .pass_header .exp_date .exp_time {
+  font-family: 'SF Pro Display Semibold';
+  font-size: 8px;
+  color: #fff;
+}
+
+.main_page .iphone .iphone_container .pass_content .pass_content_container .pass_header .exp_date .exp_date {
+  font-family: 'SF Pro Display Regular';
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.main_page .iphone .iphone_container .pass_content .pass_content_container .mini_p {
+  font-family: 'SF Pro Display Semibold';
+  font-size: 9px;
+  color: #fff;
+}
+
+.main_page .iphone .iphone_container .pass_content .pass_content_container .pass_event_info {
+  margin-top: 15px;
+}
+
+.main_page .iphone .iphone_container .pass_content .pass_content_container .pass_event_info .pass_event_name {
+  font-family: 'SF Pro Display Regular';
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.main_page .iphone .iphone_container .pass_content .pass_content_container .pass_place_info {
+  margin-top: 13px;
+}
+
+.main_page .iphone .iphone_container .pass_content .pass_content_container .pass_place_info .pass_place {
+  font-family: 'SF Pro Display Regular';
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.main_page .iphone .iphone_container .pass_content .pass_content_container .pass_ticket_info {
+  margin-top: 13px;
+}
+
+.main_page .iphone .iphone_container .pass_content .pass_content_container .pass_ticket_info .pass_ticket {
+  font-family: 'SF Pro Display Regular';
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.main_page .iphone .iphone_container .pass_content .qr_code {
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  left: 72px;
+  width: 112px;
+  height: 112px;
+  border-radius: 3px;
+}
+
+.main_page .iphone .iphone_container button {
+  position: absolute;
+  padding-bottom: 16px;
+  padding-top: 13px;
+  background-color: #124261;
+  border-radius: 8px;
+  width: 100%;
+  border: none;
+  bottom: 0;
+  font-family: 'Helvetica Neue Bold';
+  font-size: 17px;
+  color: white;
+}
+/*# sourceMappingURL=index.css.map */
