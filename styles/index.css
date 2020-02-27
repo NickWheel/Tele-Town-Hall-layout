@@ -169,12 +169,30 @@ ul, a, li {
   cursor: pointer;
 }
 
+.tooltip .needed_path {
+  -webkit-transition: 0.3s fill;
+  transition: 0.3s fill;
+}
+
+.tooltip .needed_stroke {
+  -webkit-transition: 0.3s stroke;
+  transition: 0.3s stroke;
+}
+
 .tooltip:hover {
   overflow: visible;
 }
 
 .tooltip:hover .tooltip-content {
   opacity: 1;
+}
+
+.tooltip:hover .needed_path {
+  fill: #124261;
+}
+
+.tooltip:hover .needed_stroke {
+  stroke: #124261;
 }
 
 .tooltip .tooltip-content {
@@ -282,6 +300,40 @@ select .option_to_change {
           transform: translate(0, -16px);
 }
 
+.needed_path {
+  -webkit-transition: 0.3s fill;
+  transition: 0.3s fill;
+}
+
+.needed_path:hover {
+  fill: #124261;
+}
+
+.needed_stroke {
+  -webkit-transition: 0.3s stroke;
+  transition: 0.3s stroke;
+}
+
+.needed_stroke:hover {
+  stroke: #124261;
+}
+
+.current_page {
+  border-bottom: 4px solid #124261 !important;
+}
+
+.current_page .needed_path {
+  fill: #124261 !important;
+}
+
+.current_page .needed_stroke {
+  stroke: #124261 !important;
+}
+
+.current_page p {
+  color: #124261 !important;
+}
+
 .pass_nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -301,7 +353,7 @@ select .option_to_change {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 8px;
+  padding: 8px 0 8px 0;
   padding-bottom: 17px;
   border-bottom: 4px solid #fff;
   -webkit-transition: 0.3s border-color;
@@ -314,9 +366,14 @@ select .option_to_change {
   margin-right: 5px;
 }
 
-.pass_nav .pass_nav_item svg path {
+.pass_nav .pass_nav_item svg .needed_path {
   -webkit-transition: 0.3s fill;
   transition: 0.3s fill;
+}
+
+.pass_nav .pass_nav_item svg .needed_stroke {
+  -webkit-transition: 0.3s stroke;
+  transition: 0.3s stroke;
 }
 
 .pass_nav .pass_nav_item p {
@@ -331,8 +388,12 @@ select .option_to_change {
   border-bottom: 4px solid #124261;
 }
 
-.pass_nav .pass_nav_item:hover path {
+.pass_nav .pass_nav_item:hover .needed_path {
   fill: #124261;
+}
+
+.pass_nav .pass_nav_item:hover .needed_stroke {
+  stroke: #124261;
 }
 
 .pass_nav .pass_nav_item:hover p {
@@ -477,13 +538,6 @@ select .option_to_change {
   padding-top: 7px;
 }
 
-.main_page .iphone .iphone_container .pass_content .pass_content_container .pass_header .logo {
-  width: 109px;
-  height: 26px;
-  color: #124261;
-  background-color: #8DA4B3;
-}
-
 .main_page .iphone .iphone_container .pass_content .pass_content_container .pass_header .exp_date {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -611,6 +665,51 @@ select .option_to_change {
       flex-wrap: wrap;
 }
 
+.main_page .pass_settings .cards .card {
+  margin: 0;
+}
+
+.main_page .pass_settings .cards .card input:checked + .card_info {
+  color: #124261;
+  font-family: 'Helvetica Neue Bold';
+}
+
+.main_page .pass_settings .cards .card input:checked + .card_info + svg .needed_path {
+  fill: #124261;
+}
+
+.main_page .pass_settings .cards .card input:checked + .card_info + svg .needed_stroke {
+  stroke: #124261;
+}
+
+.main_page .pass_settings .cards .card .needed_path {
+  -webkit-transition: 0.3s fill;
+  transition: 0.3s fill;
+}
+
+.main_page .pass_settings .cards .card .needed_stroke {
+  -webkit-transition: 0.3s stroke;
+  transition: 0.3s stroke;
+}
+
+.main_page .pass_settings .cards .card .aw_crap {
+  border-bottom: #8DA4B3;
+  -webkit-transition: 0.3s border-bottom;
+  transition: 0.3s border-bottom;
+}
+
+.main_page .pass_settings .cards .card:hover .needed_path {
+  fill: #124261;
+}
+
+.main_page .pass_settings .cards .card:hover .needed_stroke {
+  stroke: #124261;
+}
+
+.main_page .pass_settings .cards .card:hover .aw_crap {
+  border-bottom: #124261;
+}
+
 .main_page .pass_settings .cards .card:hover .card_info {
   color: #124261;
   font-family: 'Helvetica Neue Bold';
@@ -636,7 +735,9 @@ select .option_to_change {
       -ms-flex-align: center;
           align-items: center;
   font-family: 'Helvetica Neue Regular';
+  margin-top: 5px;
   margin-bottom: 18px;
+  height: 23px;
   font-size: 18px;
   color: #333333;
   -webkit-transition: 0.3s color, 0.3s font-family;
@@ -735,9 +836,14 @@ select .option_to_change {
   border-radius: 4px;
 }
 
+.main_page .pass_settings .pass_form .textarea {
+  height: 50px;
+}
+
 .main_page .pass_settings .pass_form .text_under_select {
   font-family: 'Helvetica Neue Regular';
   font-size: 12px;
+  line-height: 18px;
   color: #999999;
   margin-bottom: 40px;
 }
@@ -745,5 +851,45 @@ select .option_to_change {
 .main_page .pass_settings .pass_form .text_under_select a {
   color: #124261;
   cursor: pointer;
+}
+
+.main_page .pass_settings .pass_form .dropdown {
+  margin-bottom: 33px;
+}
+
+.main_page .pass_settings .pass_form .dropdown .dropdown_switcher {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main_page .pass_settings .pass_form .dropdown #dropdown_trigger {
+  display: none;
+}
+
+.main_page .pass_settings .pass_form .dropdown #dropdown_trigger:checked + .dropdown_list {
+  display: block;
+}
+
+.main_page .pass_settings .pass_form .dropdown .dropdown_list {
+  display: none;
+}
+
+.main_page .pass_settings .pass_form .next_step {
+  padding-bottom: 16px;
+  padding-top: 13px;
+  padding: 13px 24px 16px 24px;
+  background-color: #124261;
+  border-radius: 8px;
+  border: none;
+  font-family: 'Helvetica Neue Bold';
+  font-size: 17px;
+  color: white;
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="138" height="176" viewBox="0 0 138 176">
+    <defs>
+        <filter id="prefix__a" width="272.4%" height="272.4%" x="-86.2%" y="-69%" filterUnits="objectBoundingBox">
+            <feOffset dy="10" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="15"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.361456312 0 0 0 0 0.419016343 0 0 0 0 0.456210371 0 0 0 0.2 0"/>
+        </filter>
+        <circle id="prefix__b" cx="29" cy="29" r="29"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#FFF" stroke="#C1CBD1" d="M130.308.5H7.692c-2.533 0-3.459.246-4.387.742-.89.476-1.587 1.174-2.063 2.063C.746 4.233.5 5.16.5 7.692v160.616c0 2.533.246 3.459.742 4.387.476.89 1.174 1.587 2.063 2.063.928.496 1.854.742 4.387.742h122.616c2.533 0 3.459-.246 4.387-.742.89-.476 1.587-1.174 2.063-2.063.496-.928.742-1.854.742-4.387V7.692c0-2.533-.246-3.459-.742-4.387-.476-.89-1.174-1.587-2.063-2.063C133.767.746 132.84.5 130.308.5z"/>
+        <path fill="#E6F0F7" d="M131 134v32H7v-32h124zm0-49v12H7V85h124zM95 31v44H7V31h88zm36 0v44H99V31h32zM23 11v10H7V11h16zm83 0v10H27V11h79zm25 0v10h-21V11h21z"/>
+        <g transform="translate(40 72)">
+            <use fill="#000" filter="url(#prefix__a)" xlink:href="#prefix__b"/>
+            <use fill="#8DA4B3" xlink:href="#prefix__b"/>
+            <text fill="#FFF" font-family="HelveticaNeue-CondensedBlack, Helvetica Neue" font-size="32" font-style="condensed" font-weight="700" transform="rotate(90 32.5 30)">
+                <tspan x="23.316" y="42">:)</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
