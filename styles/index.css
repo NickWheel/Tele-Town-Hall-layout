@@ -220,6 +220,68 @@ ul, a, li {
   top: 50%;
 }
 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 0 !important;
+  background: #fff;
+  background-image: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 20px;
+  padding: 5px 8px 5px 7px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  line-height: 3;
+  background: #fff;
+  overflow: hidden;
+  border: 1px solid #DEDFDF;
+  border-radius: 4px;
+}
+
+select {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-family: 'Helvetica Neue Regular';
+  font-size: 14px;
+  color: #333333;
+  cursor: pointer;
+}
+
+select .option_to_change {
+  color: #999999;
+}
+
+.select::after {
+  content: url(../img/Shape.svg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 12px;
+  padding: 9px 7px 9px 0px;
+  background: #fff;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transform: translate(0, -16px);
+          transform: translate(0, -16px);
+}
+
 .pass_nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -650,8 +712,8 @@ ul, a, li {
 }
 
 .main_page .pass_settings .pass_form .p_header svg {
-  -webkit-transform: translateY(3px);
-          transform: translateY(3px);
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
   margin-left: 5px;
 }
 
@@ -668,8 +730,20 @@ ul, a, li {
   padding: 5px 18px 5px 8px;
   font-family: 'Helvetica Neue Regular';
   font-size: 14px;
-  color: #999999;
+  color: #333333;
   border: 1px solid #DEDFDF;
   border-radius: 4px;
+}
+
+.main_page .pass_settings .pass_form .text_under_select {
+  font-family: 'Helvetica Neue Regular';
+  font-size: 12px;
+  color: #999999;
+  margin-bottom: 40px;
+}
+
+.main_page .pass_settings .pass_form .text_under_select a {
+  color: #124261;
+  cursor: pointer;
 }
 /*# sourceMappingURL=index.css.map */
