@@ -9,6 +9,7 @@
   font-family: 'Helvetica Neue Bold';
   src: url(fonts/HelveticaNeueBold.ttf);
   font-size: 14px;
+  line-height: 20px;
   color: #333333;
 }
 
@@ -73,6 +74,66 @@ ul, a, li {
 .container {
   max-width: 1170px;
   margin: 0 auto;
+}
+
+.form_input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  width: 100%;
+  height: 30px;
+  padding: 5px 18px 5px 8px;
+  font-family: 'Helvetica Neue Regular';
+  font-size: 14px;
+  color: #333333;
+  border: 1px solid #DEDFDF;
+  border-radius: 4px;
+}
+
+.textarea {
+  height: 50px;
+}
+
+.upload {
+  position: relative;
+  height: 55px;
+  width: 55px;
+  border: 1px dashed #8DA4B3;
+  border-radius: 4px;
+  display: block;
+  -webkit-transition: border 0.3s ease;
+  transition: border 0.3s ease;
+  cursor: pointer;
+}
+
+.upload svg {
+  padding: 15px 16px 18px 17px;
+}
+
+.upload .needed_path {
+  position: absolute;
+  display: block;
+  -webkit-transition: 0.3s fill;
+  transition: 0.3s fill;
+}
+
+.upload:hover {
+  border: 1px solid #124261;
+}
+
+.upload:hover .needed_path {
+  fill: #124261;
+}
+
+.upload input[type=file] {
+  outline: 0;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .radio {
@@ -238,6 +299,170 @@ ul, a, li {
   top: 50%;
 }
 
+.checkbox_test {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: scale(0.66);
+          transform: scale(0.66);
+}
+
+.checkbox_test * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.checkbox_test input[type='checkbox'] {
+  height: 0;
+  width: 0;
+}
+
+.checkbox_test input[type='checkbox'] + label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #9e9e9e;
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.23, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+.checkbox_test input[type='checkbox'] + label > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1.5em;
+  height: 1.5em;
+  background: transparent;
+  border: 2px solid #9E9E9E;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+.checkbox_test input[type='checkbox'] + label:hover, .checkbox_test input[type='checkbox']:focus + label {
+  color: #fff;
+}
+
+.checkbox_test input[type='checkbox'] + label:hover > span, .checkbox_test input[type='checkbox']:focus + label > span {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.checkbox_test input[type='checkbox']:checked + label > span {
+  border: 0.5em solid #124261;
+  background-color: #124261;
+  -webkit-animation: shrink-bounce 200ms cubic-bezier(0.4, 0, 0.23, 1);
+          animation: shrink-bounce 200ms cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+.checkbox_test input[type='checkbox']:checked + label > span:before {
+  content: "";
+  position: absolute;
+  top: 0.05em;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transform: rotate(45deg) scale(0.7);
+          transform: rotate(45deg) scale(0.7);
+  -webkit-animation: checkbox-check 125ms 250ms cubic-bezier(0.4, 0, 0.23, 1) forwards;
+          animation: checkbox-check 125ms 250ms cubic-bezier(0.4, 0, 0.23, 1) forwards;
+}
+
+@-webkit-keyframes shrink-bounce {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  33% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes shrink-bounce {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  33% {
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes checkbox-check {
+  0% {
+    width: 0;
+    height: 0;
+    border-color: #fff;
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+            transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  33% {
+    width: .4em;
+    height: 0;
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+            transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  100% {
+    width: .4em;
+    height: 1em;
+    border-color: #fff;
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+            transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+}
+
+@keyframes checkbox-check {
+  0% {
+    width: 0;
+    height: 0;
+    border-color: #fff;
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+            transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  33% {
+    width: .4em;
+    height: 0;
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+            transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  100% {
+    width: .4em;
+    height: 1em;
+    border-color: #fff;
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+            transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+}
+
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -332,6 +557,55 @@ select .option_to_change {
 
 .current_page p {
   color: #124261 !important;
+}
+
+.dropdown {
+  margin-bottom: 33px;
+}
+
+.dropdown .dropdown_switcher {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dropdown #dropdown_trigger,
+.dropdown #dropdown_trigger11,
+.dropdown #dropdown_trigger22,
+.dropdown #dropdown_trigger33,
+.dropdown #dropdown_trigger44 {
+  display: none;
+}
+
+.dropdown #dropdown_trigger:checked + .dropdown_list,
+.dropdown #dropdown_trigger11:checked + .dropdown_list,
+.dropdown #dropdown_trigger22:checked + .dropdown_list,
+.dropdown #dropdown_trigger33:checked + .dropdown_list,
+.dropdown #dropdown_trigger44:checked + .dropdown_list {
+  display: block;
+}
+
+.dropdown .dropdown_list {
+  display: none;
+}
+
+.next_step {
+  padding-bottom: 16px;
+  padding-top: 13px;
+  padding: 13px 24px 16px 24px;
+  margin-bottom: 56px;
+  background-color: #124261;
+  border-radius: 8px;
+  border: none;
+  font-family: 'Helvetica Neue Bold';
+  font-size: 17px;
+  color: white;
 }
 
 .pass_nav {
@@ -789,7 +1063,7 @@ select .option_to_change {
 }
 
 .main_page .pass_settings hr {
-  margin-top: 24px;
+  margin-top: 8px;
   margin-bottom: 32px;
 }
 
@@ -797,6 +1071,7 @@ select .option_to_change {
   position: relative;
   z-index: 5;
   width: 370px;
+  padding-bottom: 56px;
 }
 
 .main_page .pass_settings .pass_form .p_header {
@@ -891,5 +1166,355 @@ select .option_to_change {
   font-family: 'Helvetica Neue Bold';
   font-size: 17px;
   color: white;
+}
+
+.main_page .colours_and_images {
+  position: relative;
+  max-width: 780px;
+  width: 780px;
+  margin-top: 16px;
+  margin-left: 81px;
+}
+
+.main_page .colours_and_images h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  font-family: 'Helvetica Neue Bold';
+  color: #333333;
+  font-size: 21px;
+}
+
+.main_page .colours_and_images .text_under_h3 {
+  font-family: 'Helvetica Neue Regular';
+}
+
+.main_page .colours_and_images hr {
+  height: 1px;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+.main_page .colours_and_images .pass_form {
+  position: relative;
+  z-index: 5;
+  width: 370px;
+  padding-bottom: 56px;
+}
+
+.main_page .colours_and_images .pass_form .p_header {
+  position: relative;
+  z-index: 4;
+  font-family: 'Helvetica Neue Bold';
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+.main_page .colours_and_images .pass_form .p_header .red_star {
+  color: #B94A48;
+  font-size: 14px;
+}
+
+.main_page .colours_and_images .pass_form .p_header svg {
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+  margin-left: 5px;
+}
+
+.main_page .colours_and_images .pass_form hr {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.main_page .colours_and_images .pass_form .icon_image {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.main_page .colours_and_images .pass_form .icon_image p {
+  margin-left: 15px;
+  text-align: left;
+  font-family: 'Helvetica Neue Regular';
+  font-size: 12px;
+  color: #999999;
+  line-height: 18px;
+}
+
+.main_page .colours_and_images .pass_form .logo_image {
+  position: relative;
+  width: 100%;
+}
+
+.main_page .colours_and_images .pass_form .logo_image .upload {
+  height: 43px;
+  width: 224px;
+}
+
+.main_page .colours_and_images .pass_form .logo_image .upload svg {
+  padding: 10px 100px 9px 100px;
+}
+
+.main_page .colours_and_images .pass_form .logo_image p {
+  margin-top: 10px;
+  text-align: left;
+  font-family: 'Helvetica Neue Regular';
+  font-size: 12px;
+  color: #999999;
+  line-height: 18px;
+}
+
+.main_page .colours_and_images .pass_form .background_image {
+  position: relative;
+  width: 100%;
+}
+
+.main_page .colours_and_images .pass_form .background_image .upload {
+  height: 200px;
+  width: 160px;
+}
+
+.main_page .colours_and_images .pass_form .background_image .upload svg {
+  padding: 88px 68px;
+}
+
+.main_page .colours_and_images .pass_form .background_image p {
+  margin-top: 10px;
+  text-align: left;
+  font-family: 'Helvetica Neue Regular';
+  font-size: 12px;
+  color: #999999;
+  line-height: 18px;
+}
+
+.main_page .colours_and_images .pass_form .thumbnail_image {
+  position: relative;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.main_page .colours_and_images .pass_form .thumbnail_image .upload {
+  height: 80px;
+  width: 80px;
+}
+
+.main_page .colours_and_images .pass_form .thumbnail_image .upload svg {
+  padding: 28px;
+}
+
+.main_page .colours_and_images .pass_form .thumbnail_image p {
+  margin-top: 10px;
+  text-align: left;
+  font-family: 'Helvetica Neue Regular';
+  font-size: 12px;
+  color: #999999;
+  line-height: 18px;
+}
+
+.main_page .front_content {
+  position: relative;
+  max-width: 780px;
+  width: 780px;
+  margin-top: 16px;
+  margin-left: 81px;
+}
+
+.main_page .front_content h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  font-family: 'Helvetica Neue Bold';
+  color: #333333;
+  font-size: 21px;
+}
+
+.main_page .front_content .text_under_h3 {
+  font-family: 'Helvetica Neue Regular';
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.main_page .front_content hr {
+  height: 1px;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+.main_page .front_content .hr {
+  margin-top: 24px;
+}
+
+.main_page .front_content .pass_form {
+  position: relative;
+  z-index: 5;
+  width: 370px;
+  padding-bottom: 56px;
+}
+
+.main_page .front_content .pass_form .p_header {
+  position: relative;
+  z-index: 4;
+  font-family: 'Helvetica Neue Bold';
+  font-size: 14px;
+  color: #333333;
+}
+
+.main_page .front_content .pass_form .p_header .red_star {
+  color: #B94A48;
+  font-size: 14px;
+}
+
+.main_page .front_content .pass_form .p_header svg {
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+  margin-left: 5px;
+}
+
+.main_page .front_content .pass_form .hr {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.main_page .front_content .pass_form .big_dropdown {
+  margin-bottom: 33px;
+}
+
+.main_page .front_content .pass_form .big_dropdown .burger_menu {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 16px;
+}
+
+.main_page .front_content .pass_form .big_dropdown .burger_menu .burger_menu_element {
+  background-color: #d8d8d8;
+  border-radius: 1px;
+  width: 16px;
+  height: 2px;
+}
+
+.main_page .front_content .pass_form .big_dropdown .big_dropdown_switcher {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f6f6f6;
+  border: 1px solid #DEDFDF;
+  padding: 16px;
+}
+
+.main_page .front_content .pass_form .big_dropdown .big_dropdown_switcher .big_dropdown_switcher_left_side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main_page .front_content .pass_form .big_dropdown .big_dropdown_switcher .big_dropdown_switcher_left_side .plus {
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  font-family: 'Helvetica Neue Bold';
+  position: relative;
+}
+
+.main_page .front_content .pass_form .big_dropdown .big_dropdown_switcher .big_dropdown_switcher_left_side .plus .plus_element1 {
+  position: absolute;
+  width: 2px;
+  height: 16px;
+  -webkit-transform: rotate(-270deg);
+          transform: rotate(-270deg);
+  background-color: #124261;
+}
+
+.main_page .front_content .pass_form .big_dropdown .big_dropdown_switcher .big_dropdown_switcher_left_side .plus .plus_element2 {
+  position: absolute;
+  width: 2px;
+  height: 16px;
+  background-color: #124261;
+}
+
+.main_page .front_content .pass_form .big_dropdown .big_dropdown_switcher .big_dropdown_switcher_left_side p {
+  margin-left: 8px;
+}
+
+.main_page .front_content .pass_form .big_dropdown #big_dropdown_trigger1,
+.main_page .front_content .pass_form .big_dropdown #big_dropdown_trigger2,
+.main_page .front_content .pass_form .big_dropdown #big_dropdown_trigger3,
+.main_page .front_content .pass_form .big_dropdown #big_dropdown_trigger4 {
+  display: none;
+}
+
+.main_page .front_content .pass_form .big_dropdown #big_dropdown_trigger1:checked + .big_dropdown_list,
+.main_page .front_content .pass_form .big_dropdown #big_dropdown_trigger2:checked + .big_dropdown_list,
+.main_page .front_content .pass_form .big_dropdown #big_dropdown_trigger3:checked + .big_dropdown_list,
+.main_page .front_content .pass_form .big_dropdown #big_dropdown_trigger4:checked + .big_dropdown_list {
+  display: block;
+}
+
+.main_page .front_content .pass_form .big_dropdown .big_dropdown_list {
+  display: none;
+  padding: 17px 16px 18px 16px;
+  border: 1px solid #DEDFDF;
+  border-top: 0px;
+}
+
+.main_page .front_content .pass_form .big_dropdown .big_dropdown_list hr {
+  margin: 16px 0;
+}
+
+.main_page .front_content .pass_form .big_dropdown .big_dropdown_list .checkbox_div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main_page .front_content .pass_form .big_dropdown .big_dropdown_list .checkbox_div p {
+  font-family: 'Helvetica Neue Regular';
+}
+
+.main_page .front_content .pass_form .add_block .big_dropdown_switcher {
+  cursor: pointer;
 }
 /*# sourceMappingURL=index.css.map */
