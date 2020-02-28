@@ -30,7 +30,7 @@
         <p>Colours & Images</p>
       </a>
 
-      <a href='#' class="pass_nav_item current_page">
+      <a href='./frontContent.html' class="pass_nav_item">
         <svg width="24" height="24" viewBox="0 0 24 24">
             <g fill="none" fill-rule="evenodd">
                 <path d="M0 0H23V23H0z"/>
@@ -65,7 +65,7 @@
         </svg>
         <p>Lock Screen</p>
       </a>
-      <a href='./languages.html' class="pass_nav_item">
+      <a href='#' class="pass_nav_item current_page">
         <svg width="24" height="24" viewBox="0 0 24 24">
           <g fill="none" fill-rule="evenodd">
             <path class="needed_path" fill="#8DA4B3" d="M20.883 1.504H3.889c-1.06 0-1.936.828-1.997 1.886l-.771 13.496c-.063 1.103.78 2.048 1.882 2.11.038.003.077.004.115.004h2.814L5 23l7.46-4h7.651c1.06 0 1.936-.827 1.997-1.886l.771-13.495c.063-1.103-.78-2.048-1.882-2.111-.038-.003-.076-.004-.114-.004z"/>
@@ -176,83 +176,142 @@
         </div>
       </div>
 
-      <div class="front_content">
-        <h3>Front Content</h3>
-        <hr>
-        <p class="text_under_h3">
-          Each pass may contain a barcode that can be scanned by the pass issuer to identify a pass or to trigger some sort of action (E.g. update a field on the pass and push an update). Apple Wallet supports 4 types of barcode. Which barcode is most appropriate will depend upon the amount of information you wish to encode, the capability of your scanning technology and the design of your pass.
-          <br>
-          <br>
-          Square barcodes (Aztec and QR Code) work better for large messages but reduce the amount of other information the pass can display for certain pass types. Code 128 Barcodes require a fallback fro devices running iOS 8 or earlier.
-        </p>
-        <hr class="hr">
+      <div class="front_content lock_screen">
+        <h3>Languages</h3>
+        <hr class="under_languages">
 
-
-        <form action="" class="pass_form">
-          <p class="p_header row">
-            Text Alignment
+        <form action="" class="pass_form pf_lockscreen">
+          <p class="text_under_h3">
+            If you would like to localise the pass for multiple languages please select the desired language and provide translation below. If you choose, you can also supply provide separate images for each language. Unless a specific language is specified, the pass will dispaly field labels and data as specified in this template. Dates, numbers and currency data types will always be displayed according to the users's language and region preference.
           </p>
-          <div class="select">
-            <select name="slcta" id="slcta">
-              <option selected disabled class="option_to_change">PDF417 Code</option>
-              <option value="1">Or not</option>
-              <option value="2">Or yes</option>
-              <option value="3">I dunno</option>
-            </select>
-          </div>
-
-
-          <p class="p_header row">
-            Encoded Message
-          </p>
-          <div class="select">
-            <select name="slcts" id="slcts">
-              <option selected disabled class="option_to_change">Encode the URL to update the pass</option>
-              <option value="1">Or not</option>
-              <option value="2">Or yes</option>
-              <option value="3">I dunno</option>
-            </select>
-          </div>
-
+          <hr>
+          <!-- TEXTAREAS -->
+          <div class="pass_form">
             <p class="p_header row">
-              Alternative Text
+              Pass Language
             </p>
             <div class="select">
-              <select name="slctd" id="slctd">
-                <option selected disabled class="option_to_change">Display the pass serial number</option>
-                <option value="1">Or not</option>
-                <option value="2">Or yes</option>
-                <option value="3">I dunno</option>
+              <select name="slct" id="slct">
+                <option selected class="option_to_change">English</option>
+                <option value="1">Ukranian</option>
+                <option value="2">Russian</option>
+                <option value="3">German</option>
               </select>
             </div>
+          </div>
+          <hr>
 
-
-
-          <div class="dropdown">
-            <label class="dropdown_switcher" for='dropdown_trigger22'>
-              <img src="./img/triangle.svg" alt="triangle">
-              <p>Advanced Options</p>
-            </label>
-            <input type="checkbox" id='dropdown_trigger22'>
-            <div class="dropdown_list">
-              <label class="radio" id="r2r2">
-                <input type="radio" name="r2r2" checked>
-                <span>Option 1</span>
-              </label>
-              <label class="radio">
-                <input type="radio" name="r2r2">
-                <span>Option 2</span>
-              </label>
-              <label class="radio">
-                <input type="radio" name="r2r2">
-                <span>Option 3</span>
-              </label>
+          <div class="pass_form">
+            <div class="checkbox_languages_div">
+              <div class="checkbox_test">
+                <input id="two" type="checkbox" checked="">
+                <label for="two">
+                    <span></span>
+                </label>
+              </div>
+              <p>Language</p>
+            </div>
+            <div class="select">
+              <select name="slct" id="slct">
+                <option selected class="option_to_change">English</option>
+                <option value="1">Ukranian</option>
+                <option value="2">Russian</option>
+                <option value="3">German</option>
+              </select>
             </div>
           </div>
+          <div class="languages_textareas_block">
+            <div class="languages_textareas">
+              <div class="pass_form">
+                <p class="p_header row">
+                  Original Text<span class="red_star">*</span>
+                </p>
+                <textarea class="form_input textarea" name="description" id="" cols="30" rows="10"></textarea>
+                <textarea class="form_input textarea" name="description" id="" cols="30" rows="10"></textarea>
+                <!-- Place where ROW should be added -->
+              </div>
+              <div class="pass_form">
+                <p class="p_header row">
+                  Local Text<span class="red_star">*</span>
+                </p>
+                <textarea class="form_input textarea" name="description" id="" cols="30" rows="10"></textarea>
+                <textarea class="form_input textarea" name="description" id="" cols="30" rows="10"></textarea>
+                  <!-- Place where ROW should be added -->
+              </div>
+            </div>
+            <button class="next_step add_btn">Add Row</button>
+          </div>
+          <hr>
+          <!-- UPLOAD -->
+          <p class="p_header row">Icon Image<span class="red_star">*</span>
+            <a class="tooltip right">
+              <svg enable-background="new 0 0 524.235 524.235" height="16px" viewBox="0 0 524.235 524.235" width="16px">
+                <path class="needed_path" d="m262.118 0c-144.53 0-262.118 117.588-262.118 262.118s117.588 262.118 262.118 262.118 262.118-117.588 262.118-262.118-117.589-262.118-262.118-262.118zm17.05 417.639c-12.453 2.076-37.232 7.261-49.815 8.303-10.651.882-20.702-5.215-26.829-13.967-6.143-8.751-7.615-19.95-3.968-29.997l49.547-136.242h-51.515c-.044-28.389 21.25-49.263 48.485-57.274 12.997-3.824 37.212-9.057 49.809-8.255 7.547.48 20.702 5.215 26.829 13.967 6.143 8.751 7.615 19.95 3.968 29.997l-49.547 136.242h51.499c.01 28.356-20.49 52.564-48.463 57.226zm15.714-253.815c-18.096 0-32.765-14.671-32.765-32.765 0-18.096 14.669-32.765 32.765-32.765s32.765 14.669 32.765 32.765c0 18.095-14.668 32.765-32.765 32.765z" fill="#8DA4B3"/> 
+              </svg>
+              <span class="tooltip-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt fuga culpa illo tenetur quibusdam commodi.
+              </span>
+            </a>
+          </p>
+          <div class="icon_image">
+            <label class="upload">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path class="needed_path" fill="#8DA4B3" d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v3c0 .552-.448 1-1 1h-2c-.552 0-1-.448-1-1v-3H8l4-5 4 5h-2z"/>
+              </svg>
+              <input type="file">
+            </label>
+            <p>
+              To learn more about Pass Certificates and how to upload or acquire a private certificate for your organisation, please click here.
+            </p>
+          </div>
+          <hr>
+          <p class="p_header row">Logo Image
+            <a class="tooltip right">
+              <svg enable-background="new 0 0 524.235 524.235" height="16px" viewBox="0 0 524.235 524.235" width="16px">
+                <path class="needed_path" d="m262.118 0c-144.53 0-262.118 117.588-262.118 262.118s117.588 262.118 262.118 262.118 262.118-117.588 262.118-262.118-117.589-262.118-262.118-262.118zm17.05 417.639c-12.453 2.076-37.232 7.261-49.815 8.303-10.651.882-20.702-5.215-26.829-13.967-6.143-8.751-7.615-19.95-3.968-29.997l49.547-136.242h-51.515c-.044-28.389 21.25-49.263 48.485-57.274 12.997-3.824 37.212-9.057 49.809-8.255 7.547.48 20.702 5.215 26.829 13.967 6.143 8.751 7.615 19.95 3.968 29.997l-49.547 136.242h51.499c.01 28.356-20.49 52.564-48.463 57.226zm15.714-253.815c-18.096 0-32.765-14.671-32.765-32.765 0-18.096 14.669-32.765 32.765-32.765s32.765 14.669 32.765 32.765c0 18.095-14.668 32.765-32.765 32.765z" fill="#8DA4B3"/> 
+              </svg>
+              <span class="tooltip-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt fuga culpa illo tenetur quibusdam commodi.
+              </span>
+            </a>
+          </p>
+          <div class="logo_image">
+            <label class="upload">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path class="needed_path" fill="#8DA4B3" d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v3c0 .552-.448 1-1 1h-2c-.552 0-1-.448-1-1v-3H8l4-5 4 5h-2z"/>
+              </svg>
+              <input type="file">
+            </label>
+            <p>
+              Logo images should be at least 100px high
+            </p>
+          </div>
+          <hr>
+          <p class="p_header row">Background Image
+            <a class="tooltip right">
+              <svg enable-background="new 0 0 524.235 524.235" height="16px" viewBox="0 0 524.235 524.235" width="16px">
+                <path class="needed_path" d="m262.118 0c-144.53 0-262.118 117.588-262.118 262.118s117.588 262.118 262.118 262.118 262.118-117.588 262.118-262.118-117.589-262.118-262.118-262.118zm17.05 417.639c-12.453 2.076-37.232 7.261-49.815 8.303-10.651.882-20.702-5.215-26.829-13.967-6.143-8.751-7.615-19.95-3.968-29.997l49.547-136.242h-51.515c-.044-28.389 21.25-49.263 48.485-57.274 12.997-3.824 37.212-9.057 49.809-8.255 7.547.48 20.702 5.215 26.829 13.967 6.143 8.751 7.615 19.95 3.968 29.997l-49.547 136.242h51.499c.01 28.356-20.49 52.564-48.463 57.226zm15.714-253.815c-18.096 0-32.765-14.671-32.765-32.765 0-18.096 14.669-32.765 32.765-32.765s32.765 14.669 32.765 32.765c0 18.095-14.668 32.765-32.765 32.765z" fill="#8DA4B3"/> 
+              </svg>
+              <span class="tooltip-content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt fuga culpa illo tenetur quibusdam commodi.
+              </span>
+            </a>
+          </p>
+          <div class="background_image">
+            <label class="upload">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path class="needed_path" fill="#8DA4B3" d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v3c0 .552-.448 1-1 1h-2c-.552 0-1-.448-1-1v-3H8l4-5 4 5h-2z"/>
+              </svg>
+              <input type="file">
+            </label>
+            <p>
+              Logo images should be at least 100px high
+            </p>
+          </div>
+          <hr>
+          <button class="next_step add_btn">Add Language</button>
 
-
-
-          <a href="./backContent.html" class="next_step">
+          <a href="./distribution.html" class="next_step">
             Next step
           </a>
         </form>
