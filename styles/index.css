@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: 'Helvetica Neue Bold';
-  src: url(fonts/HelveticaNeueBold.ttf);
+  src: url(fonts/Helvetica-Neue-Bold.ttf);
   font-size: 14px;
   line-height: 20px;
   color: #333333;
@@ -22,9 +22,10 @@
 
 @font-face {
   font-family: 'Helvetica Neue Regular';
-  src: url(fonts/HelveticaNeueRegular.ttf);
+  src: url(fonts/Helvetica-Neue-Roman.ttf);
+  font-style: bold;
   font-size: 14px;
-  color: #333333;
+  color: rgba(51, 51, 51, 0.99);
 }
 
 @font-face {
@@ -154,6 +155,8 @@ ul, a, li {
   line-height: 22px;
   height: 22px;
   padding-left: 22px;
+  font-size: 14px;
+  font-family: 'Helvetica Neue Regular';
   display: block;
   position: relative;
 }
@@ -581,6 +584,10 @@ select .option_to_change {
           align-items: center;
 }
 
+.dropdown .dropdown_switcher p {
+  font-family: 'Helvetica Neue Bold';
+}
+
 .dropdown #dropdown_trigger,
 .dropdown #dropdown_trigger11,
 .dropdown #dropdown_trigger22,
@@ -695,10 +702,14 @@ select .option_to_change {
 }
 
 .next_step {
-  padding-bottom: 16px;
-  padding-top: 13px;
   padding: 13px 24px 16px 24px;
+  margin-top: 32px;
   margin-bottom: 56px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  width: 126px;
+  height: 50px;
   background-color: #124261;
   border-radius: 8px;
   border: none;
@@ -871,6 +882,7 @@ select .option_to_change {
 
 .main_page .iphone .iphone_container .iphone_nav p {
   font-family: 'SF Pro Display Semibold';
+  font-size: 13px;
 }
 
 .main_page .iphone .iphone_container .pass_content {
@@ -1042,9 +1054,12 @@ select .option_to_change {
   margin: 0;
 }
 
-.main_page .pass_settings .cards .card input:checked + .card_info {
-  color: #124261;
-  font-family: 'Helvetica Neue Bold';
+.main_page .pass_settings .cards .card input:checked + .card_info .card_info_r {
+  opacity: 0;
+}
+
+.main_page .pass_settings .cards .card input:checked + .card_info .card_info_b {
+  opacity: 1;
 }
 
 .main_page .pass_settings .cards .card input:checked + .card_info + svg .needed_path {
@@ -1053,6 +1068,10 @@ select .option_to_change {
 
 .main_page .pass_settings .cards .card input:checked + .card_info + svg .needed_stroke {
   stroke: #124261;
+}
+
+.main_page .pass_settings .cards .card input:checked + .card_info + svg + .aw_crap {
+  background-color: #124261;
 }
 
 .main_page .pass_settings .cards .card .needed_path {
@@ -1066,9 +1085,13 @@ select .option_to_change {
 }
 
 .main_page .pass_settings .cards .card .aw_crap {
-  border-bottom: #8DA4B3;
-  -webkit-transition: 0.3s border-bottom;
-  transition: 0.3s border-bottom;
+  background-color: #C1CBD1;
+  width: 100%;
+  height: 1px;
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+  -webkit-transition: 0.3s background-color;
+  transition: 0.3s background-color;
 }
 
 .main_page .pass_settings .cards .card:hover .needed_path {
@@ -1080,12 +1103,15 @@ select .option_to_change {
 }
 
 .main_page .pass_settings .cards .card:hover .aw_crap {
-  border-bottom: #124261;
+  background-color: #124261;
 }
 
-.main_page .pass_settings .cards .card:hover .card_info {
-  color: #124261;
-  font-family: 'Helvetica Neue Bold';
+.main_page .pass_settings .cards .card:hover .card_info .card_info_r {
+  opacity: 0;
+}
+
+.main_page .pass_settings .cards .card:hover .card_info .card_info_b {
+  opacity: 1;
 }
 
 .main_page .pass_settings .cards .card:hover .card_form {
@@ -1097,6 +1123,7 @@ select .option_to_change {
 }
 
 .main_page .pass_settings .cards .card .card_info {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1107,14 +1134,28 @@ select .option_to_change {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: 'Helvetica Neue Regular';
   margin-top: 5px;
   margin-bottom: 18px;
   height: 23px;
   font-size: 18px;
+}
+
+.main_page .pass_settings .cards .card .card_info .card_info_r {
+  position: absolute;
+  font-family: 'Helvetica Neue Regular';
   color: #333333;
-  -webkit-transition: 0.3s color, 0.3s font-family;
-  transition: 0.3s color, 0.3s font-family;
+  opacity: 1;
+  -webkit-transition: 0.05s opacity;
+  transition: 0.05s opacity;
+}
+
+.main_page .pass_settings .cards .card .card_info .card_info_b {
+  position: absolute;
+  font-family: 'Helvetica Neue Bold';
+  color: #124261;
+  opacity: 0;
+  -webkit-transition: 0.05s opacity;
+  transition: 0.05s opacity;
 }
 
 .main_page .pass_settings .cards .card .card_form {
@@ -1187,6 +1228,7 @@ select .option_to_change {
 
 .main_page .pass_settings .pass_form .checkbox_languages_div p {
   font-family: 'Helvetica Neue Regular';
+  font-size: 14px;
 }
 
 .main_page .pass_settings .pass_form .p_header {
@@ -1200,6 +1242,7 @@ select .option_to_change {
 .main_page .pass_settings .pass_form .p_header .red_star {
   color: #B94A48;
   font-size: 14px;
+  margin-left: 1px;
 }
 
 .main_page .pass_settings .pass_form .p_header svg {
@@ -1291,6 +1334,7 @@ select .option_to_change {
 }
 
 .main_page .pass_settings .distribution .form_input {
+  margin-top: 0;
   margin-bottom: 0;
   height: 30px;
 }
@@ -1315,6 +1359,7 @@ select .option_to_change {
 
 .main_page .colours_and_images .text_under_h3 {
   font-family: 'Helvetica Neue Regular';
+  color: rgba(51, 51, 51, 0.99);
 }
 
 .main_page .colours_and_images hr {
@@ -1344,6 +1389,7 @@ select .option_to_change {
 .main_page .colours_and_images .pass_form .p_header .red_star {
   color: #B94A48;
   font-size: 14px;
+  margin-left: 1px;
 }
 
 .main_page .colours_and_images .pass_form .p_header svg {
@@ -1472,6 +1518,7 @@ select .option_to_change {
   font-family: 'Helvetica Neue Regular';
   font-size: 14px;
   line-height: 20px;
+  color: rgba(51, 51, 51, 0.99);
 }
 
 .main_page .front_content hr {
@@ -1507,6 +1554,7 @@ select .option_to_change {
 
 .main_page .front_content .pass_form .checkbox_languages_div p {
   font-family: 'Helvetica Neue Regular';
+  font-size: 14px;
 }
 
 .main_page .front_content .pass_form .p_header {
@@ -1520,6 +1568,7 @@ select .option_to_change {
 .main_page .front_content .pass_form .p_header .red_star {
   color: #B94A48;
   font-size: 14px;
+  margin-left: 1px;
 }
 
 .main_page .front_content .pass_form .p_header svg {
@@ -1534,7 +1583,7 @@ select .option_to_change {
 }
 
 .main_page .front_content .pass_form .big_dropdown {
-  margin-bottom: 33px;
+  margin-bottom: 16px;
 }
 
 .main_page .front_content .pass_form .big_dropdown .burger_menu {
@@ -1614,6 +1663,7 @@ select .option_to_change {
 
 .main_page .front_content .pass_form .big_dropdown .big_dropdown_switcher .big_dropdown_switcher_left_side p {
   margin-left: 8px;
+  font-family: 'Helvetica Neue Bold';
 }
 
 .main_page .front_content .pass_form .big_dropdown #big_dropdown_trigger1,
@@ -1655,10 +1705,16 @@ select .option_to_change {
 
 .main_page .front_content .pass_form .big_dropdown .big_dropdown_list .checkbox_div p {
   font-family: 'Helvetica Neue Regular';
+  font-size: 14px;
+  margin-left: 3px;
 }
 
 .main_page .front_content .pass_form .add_block .big_dropdown_switcher {
   cursor: pointer;
+}
+
+.main_page .front_content .fc4 .select {
+  margin-bottom: 20px;
 }
 
 .main_page .lock_screen {
@@ -1774,6 +1830,7 @@ select .option_to_change {
 .main_page .lock_screen .p_lockscreen .red_star {
   color: #B94A48;
   font-size: 14px;
+  margin-left: 1px;
 }
 
 .main_page .lock_screen .p_lockscreen svg {
