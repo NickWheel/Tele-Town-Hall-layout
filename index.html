@@ -330,7 +330,7 @@
         <hr>
 
 
-        <form action="" class="pass_form">
+        <form action="./coloursAndImages.html" class="pass_form">
           <p class="p_header row">Event ticket type<span class="red_star">*</span>
             <a class="tooltip right">
               <svg enable-background="new 0 0 524.235 524.235" height="16px" viewBox="0 0 524.235 524.235" width="16px">
@@ -362,7 +362,7 @@
               </span>
             </a>
           </p>
-          <input class="form_input" type="text">
+          <input class="form_input" type="text" required>
 
           <p class="p_header row">Pass Certificate<span class="red_star">*</span>
             <a class="tooltip right">
@@ -394,7 +394,7 @@
               </span>
             </a>
           </p>
-          <input class="form_input" type="text">
+          <input class="form_input" type="text" required>
 
 
           <p class="p_header row">Pass Description<span class="red_star">*</span>
@@ -407,7 +407,7 @@
               </span>
             </a>
           </p>
-          <textarea class="form_input textarea" name="description" id="" cols="30" rows="10"></textarea>
+          <textarea class="form_input textarea" name="description" cols="30" rows="10" required></textarea>
 
 
 
@@ -421,7 +421,7 @@
               </span>
             </a>
           </p>
-          <input class="form_input" type="text">
+          <input class="form_input" type="text" required>
 
 
 
@@ -516,9 +516,9 @@
           </div>
 
 
-          <a href="./coloursAndImages.html" class="next_step">
+          <button type="submit" class="next_step">
             Next step
-          </a>
+          </button>
         </form>
 
       </div>

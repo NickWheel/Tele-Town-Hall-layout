@@ -1339,6 +1339,10 @@ select .option_to_change {
   height: 30px;
 }
 
+.main_page .pass_settings .distribution .save_pass_btn {
+  width: 132px;
+}
+
 .main_page .colours_and_images {
   position: relative;
   max-width: 780px;
@@ -1804,6 +1808,10 @@ select .option_to_change {
 .main_page .lock_screen .pf_lockscreen .add_btn:hover {
   color: #124261;
   border-color: #124261;
+}
+
+.main_page .lock_screen .pf_lockscreen .language_btn {
+  width: 170px;
 }
 
 .main_page .lock_screen .pf_lockscreen .the_last_one {
